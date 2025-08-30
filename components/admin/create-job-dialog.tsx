@@ -30,10 +30,23 @@ export function CreateJobDialog() {
   const handleJoPosting = async () => {
     setOpen(false)
     const job = {
-      title, company, location, jobType, salary, description
+      title, company, location, jobType, salary, description, mesfert
     }
 
-    console.log(job);
+    try {
+      const response = await fetch('/api/job', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(job),
+      });
+      
+      if(response.ok) {
+        const data = await response.json()
+        console.log(data);
+      }
+    } catch(err) {
+      console.log(err);
+    }
   }
   return (
     <Dialog open={open} onOpenChange={setOpen}>

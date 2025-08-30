@@ -18,7 +18,8 @@ export default function JobPostingPage() {
             location: "",
             salary: "",
             description: "",
-            id: 0
+            id: 0,
+            mesfert: []
         }    
     }
     console.log(targetJob);
