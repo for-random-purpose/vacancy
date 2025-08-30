@@ -104,7 +104,7 @@ export function JobFooter() {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center">
-          <p className="text-sm text-muted-foreground">© 2024 JobBoard. All rights reserved.</p>
+          
         </div>
       </div>
     </footer>
