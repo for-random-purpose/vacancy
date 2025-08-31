@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card"
 
-export function JobDescription({ job }: { job: { id: Number, description: String, mesfert: [String] } }) {
+export function JobDescription({ job }: { job: { id: Number, description: String, mesfert: [String], requirements: [String] } }) {
   
   let display = ""
   if(job.description == "") {
@@ -11,7 +11,7 @@ export function JobDescription({ job }: { job: { id: Number, description: String
       <div className="space-y-8">
         {/* About the Role */}
         <section>
-          <h2 className="text-2xl font-bold text-foreground mb-4">ስለ ስራው ዝርዝር መረጃ </h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Job Description </h2>
           <p className="text-foreground leading-relaxed">
             {job.description}
           </p>
@@ -20,9 +20,9 @@ export function JobDescription({ job }: { job: { id: Number, description: String
       
         {/* Requirements */}
         <section>
-          <h2 className="text-2xl font-bold text-foreground mb-4">የሚጠበቁ መስፈርቶች</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Job Requirements/መስፈርቶች</h2>
           <ul className="space-y-3 text-foreground">
-            { job.mesfert.map((m, index) => (
+            { job.requirements?.map((m, index) => (
               <li key={index} className="flex items-start space-x-2">
               <span className="text-accent mt-1">•</span>
               <span> {m} </span>

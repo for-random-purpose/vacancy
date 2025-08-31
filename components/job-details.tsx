@@ -9,7 +9,7 @@ export function JobDetails({ job }) {
       <div className="space-y-6">
         {/* Job Title and Company */}
         <div className="space-y-3">
-          <h1 className="text-3xl font-bold text-foreground leading-tight"> {job.title != "" ? `የስራው መጠሪያ: ${job.title}` : "Job Not Found" }</h1>
+          <h1 className="text-3xl font-bold text-foreground leading-tight"> {job.title != "" ? `${job.title}` : "Job Not Found" }</h1>
           <div className="flex items-center space-x-2">
             <Building2 className="h-5 w-5 text-muted-foreground" />
             <span className="text-xl text-foreground">{job.company}</span>
@@ -34,6 +34,10 @@ export function JobDetails({ job }) {
             <Calendar className="h-4 w-4" />
             <span>ከ 2 ቀን በፊት የተፖሰተ</span>
           </div>
+          <div className="flex items-center space-x-2 text-muted-foreground">
+            <Calendar className="h-4 w-4" />
+            <span>Experiance Level - Junior</span>
+          </div>
         </div>
 
         {/* Job Tags */}
@@ -46,8 +50,8 @@ export function JobDetails({ job }) {
         </div>
 
         {/* Apply Button */}
-        <div className="pt-4">
-          <Button size="lg" className="w-full md:w-auto px-8 cursor-pointer">
+        <div className="pt-4 hidden">
+          <Button size="lg" className="hidden w-full md:w-auto px-8 cursor-pointer">
             Apply ለማድረግ እዚህ ጋር ይጫኑ  
           </Button>
           
